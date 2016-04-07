@@ -47,6 +47,10 @@ a {
 #seznam-kanalov div:hover {
   background-color: #ddd;
 }
+#seznam-uporabnikov div:hover {
+  background-color: #ddd;
+  cursor:pointer;
+}
 
 #poslji-sporocilo {
   width: 700px;

@@ -20,7 +20,6 @@ Klepet.prototype.procesirajUkaz = function(ukaz) {
   var besede = ukaz.split(' ');
   ukaz = besede[0].substring(1, besede[0].length).toLowerCase();
   var sporocilo = false;
-
   switch(ukaz) {
     case 'pridruzitev':
       besede.shift();
@@ -35,8 +34,10 @@ Klepet.prototype.procesirajUkaz = function(ukaz) {
     case 'zasebno':
       besede.shift();
       var besedilo = besede.join(' ');
+      console.log(besedilo);
       var parametri = besedilo.split('\"');
       if (parametri) {
+        
         this.socket.emit('sporocilo', { vzdevek: parametri[1], besedilo: parametri[3] });
         sporocilo = '(zasebno za ' + parametri[1] + '): ' + parametri[3];
       } else {
