@@ -26,16 +26,12 @@ function procesirajVnosUporabnika(klepetApp, socket) {
     sporocilo = filtirirajVulgarneBesede(sporocilo);
     klepetApp.posljiSporocilo(trenutniKanal, sporocilo);
     $('#sporocila').append(divElementEnostavniTekst(sporocilo));
-<<<<<<< HEAD
     var blu=sporocilo.match(/https?:\/\/.*\.(?:png|jpg|gif)/g);
-=======
-    var blu=sporocilo.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/g);
->>>>>>> youtube
+    var blu1=sporocilo.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/g);
     console.log(blu.length);
     console.log(blu);
     var bla="";
     bla=blu[0].split(" ");
-<<<<<<< HEAD
     console.log(bla.length);
     for(var img in bla){
      var idiv=document.createElement('div');
@@ -45,7 +41,7 @@ function procesirajVnosUporabnika(klepetApp, socket) {
      inimg.width=200;
      idiv.appendChild(inimg);
      $('#sporocila').append(idiv);
-=======
+     bla=blu1[0].split(" ");
     for(var link in bla){
       idvidea=bla[link].split("=");
       console.log(bla[1]);
@@ -56,7 +52,6 @@ function procesirajVnosUporabnika(klepetApp, socket) {
       inimg.setAttribute('allowfullscreen','');
       idiv.appendChild(inimg);
       $('#sporocila').append(idiv);
->>>>>>> youtube
     }
     $('#sporocila').scrollTop($('#sporocila').prop('scrollHeight'));
   }
