@@ -33,7 +33,9 @@ a {
   height: 150px;
   overflow: auto;
 }
-
+#slika {
+  padding-left: 20px;
+}
 #seznam {
   float: right;
   width: 15%;
