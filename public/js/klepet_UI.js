@@ -51,6 +51,8 @@ function filtirirajVulgarneBesede(vhod) {
   }
   return vhod;
 }
+//regex za youtube
+//(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?
 
 $(document).ready(function() {
   var klepetApp = new Klepet(socket);
