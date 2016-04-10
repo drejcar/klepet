@@ -33,7 +33,11 @@ a {
   height: 150px;
   overflow: auto;
 }
-
+#vid {
+  height:150px;
+  width:200px;
+  padding-left:20px;
+}
 #seznam {
   float: right;
   width: 15%;
