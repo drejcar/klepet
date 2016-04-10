@@ -8,28 +8,6 @@ Klepet.prototype.posljiSporocilo = function(kanal, besedilo) {
     besedilo: besedilo
   };
   this.socket.emit('sporocilo', sporocilo);
-  var bla=sporocilo.besedilo.match(/https?:\/\/.*\.(?:png|jpg|gif)/g);
-  console.log(bla);
-  for(var img in bla){
-     var idiv=document.createElement('div');
-     idiv.id='slika';
-     var inimg=document.createElement('img');
-     inimg.src=bla[img];
-     inimg.width=200;
-  //   inimg.height=110;
-     //inimg.longdesc=img;
-     idiv.appendChild(inimg);
-     var slikca={
-       kanal:kanal,
-       besedilo:idiv
-     };
-     //document.body.appendChild(idiv);
-     //document.getElementById('#sporocila').innerHTML+=inimg;
-     this.socket.emit('sporocilo',idiv);
-     //document.body.getElementById('#vsebina').getElementById('#sporocila').appendChild(idiv);
-     //var slikelement="<div id='slika'> <img src='img'></div>";
-     //$('#sporocila').appendChild(slikelement.);
-  }
 };
 
 Klepet.prototype.spremeniKanal = function(kanal) {
