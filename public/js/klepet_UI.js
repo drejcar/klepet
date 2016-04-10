@@ -26,11 +26,16 @@ function procesirajVnosUporabnika(klepetApp, socket) {
     sporocilo = filtirirajVulgarneBesede(sporocilo);
     klepetApp.posljiSporocilo(trenutniKanal, sporocilo);
     $('#sporocila').append(divElementEnostavniTekst(sporocilo));
+<<<<<<< HEAD
     var blu=sporocilo.match(/https?:\/\/.*\.(?:png|jpg|gif)/g);
+=======
+    var blu=sporocilo.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/g);
+>>>>>>> youtube
     console.log(blu.length);
     console.log(blu);
     var bla="";
     bla=blu[0].split(" ");
+<<<<<<< HEAD
     console.log(bla.length);
     for(var img in bla){
      var idiv=document.createElement('div');
@@ -40,6 +45,18 @@ function procesirajVnosUporabnika(klepetApp, socket) {
      inimg.width=200;
      idiv.appendChild(inimg);
      $('#sporocila').append(idiv);
+=======
+    for(var link in bla){
+      idvidea=bla[link].split("=");
+      console.log(bla[1]);
+      var idiv=document.createElement('div');
+      idiv.id='vid';
+      var inimg=document.createElement('iframe');
+      inimg.src="https://www.youtube.com/embed/"+idvidea[1];
+      inimg.setAttribute('allowfullscreen','');
+      idiv.appendChild(inimg);
+      $('#sporocila').append(idiv);
+>>>>>>> youtube
     }
     $('#sporocila').scrollTop($('#sporocila').prop('scrollHeight'));
   }
@@ -66,6 +83,8 @@ function filtirirajVulgarneBesede(vhod) {
   }
   return vhod;
 }
+//regex za youtube
+//(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?
 
 $(document).ready(function() {
   var klepetApp = new Klepet(socket);
@@ -91,11 +110,16 @@ $(document).ready(function() {
   socket.on('sporocilo', function (sporocilo) {
     var novElement = divElementEnostavniTekst(sporocilo.besedilo);
     $('#sporocila').append(novElement);
+<<<<<<< HEAD
     var blu=sporocilo.besedilo.match(/https?:\/\/.*\.(?:png|jpg|gif)/g);
+=======
+     var blu=sporocilo.besedilo.match(/(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/g);
+>>>>>>> youtube
     console.log(blu.length);
     console.log(blu);
     var bla="";
     bla=blu[0].split(" ");
+<<<<<<< HEAD
     for(var img in bla){
       console.log(bla.length);
       console.log(bla);
@@ -107,6 +131,18 @@ $(document).ready(function() {
       
       idiv.appendChild(inimg);
       $('#sporocila').append(idiv);
+=======
+    for(var link in bla){
+    idvidea=bla[link].split("=");
+    console.log(bla[1]);
+     var idiv=document.createElement('div');
+     idiv.id='vid';
+     var inimg=document.createElement('iframe');
+     inimg.src="https://www.youtube.com/embed/"+idvidea[1];
+     inimg.setAttribute('allowfullscreen','');
+     idiv.appendChild(inimg);
+     $('#sporocila').append(idiv);
+>>>>>>> youtube
     }
   });
   

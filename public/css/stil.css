@@ -33,8 +33,15 @@ a {
   height: 150px;
   overflow: auto;
 }
+
 #slika {
   padding-left: 20px;
+}
+#vid {
+  height:150px;
+  width:200px;
+  padding-left:20px;
+
 }
 #seznam {
   float: right;
